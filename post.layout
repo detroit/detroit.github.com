@@ -1,0 +1,32 @@
+layout  : page
+stencil : liquid
+
+--- html
+
+<div class="page">
+
+  <h2>{{ page.title }}</h2>
+
+  {{ yield }}
+
+  <small>Written by {{ page.author }}, {{ page.date | date_to_string }}</small>
+
+  <ul class="posts">
+    {% assign p = page.previous %}{% if p %}
+    <li><span>Previous: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.path }}">{{ p.title }}</a></li>
+    {% endif %}
+    {% assign p = page.next %}{% if p %}
+    <li><span> Next: {{ p.date | date_to_string }}</span> &raquo; <a href="{{ p.path }}">{{ p.title }}</a></li>
+    {% endif %}
+  </ul>
+
+  <script>
+  var idcomments_acct = 'edd4e79914ed49d9cdf3a0809d440a8f';
+  var idcomments_post_id;
+  var idcomments_post_url;
+  </script>
+  <span id="IDCommentsPostTitle" style="display:none"></span>
+  <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+</div>
+

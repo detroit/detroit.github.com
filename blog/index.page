@@ -1,0 +1,24 @@
+title   : Proutils Blog
+layout  : page
+stencil : liquid
+
+--- html
+
+<div class="page">
+
+{% for post in site.posts %}
+  <div class="post">
+    <h2>
+      <div style="float: right;">&raquo; {{ post.date | date_to_string }}</div>
+      <a href="{{ post.path }}">{{ post.title }}</a>
+    </h2>
+    {{ post.summary }}
+    <!-- <small>Written by {{ post.author }}</small> -->
+    <div style="text-align: right; margin-top: -10px;">
+      <a href="{{ post.path }}">Read More...</a>
+    </div>
+  </div>
+  <br/><br/>
+{% endfor %}
+
+</div>

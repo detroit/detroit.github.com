@@ -1,0 +1,23 @@
+title  : The History of Detroit
+author : Trans
+date   : 2011-06-24
+tags   : history
+layout : post
+
+--- markdown
+
+Detroit, which until recently was called "Syckle", has been through a number major redesigns.
+
+Detroit has it's origins in Reap
+
+The first version of was essentially what Hoe is today albiet with fewer tasks. Likely to the dismay of
+any early followers of the project, the second version warped into a Rake clone. Seeing no point to a slighly
+improved rewrite of Rake, the third version made a complete u-turn and had every task as a separate script
+utilizing a special DSL. Each task script could also call on other scripts simply by name (via
+method_missing). This design was very interesting, but was lacking in certain respects (largely in maturity),
+so the penultimate version evolved these tasks into a set of stand-alone executables patterned after git's
+"many small commands" design. This worked well, but it proved difficult to learn the proper usage and sequence
+of usage of so many tools. This natually led to the current version whereby all tasks belong to a life-cycle,
+similar to Maven. The user triggers a cycle-phase and all prior phases are run through until the requested
+cycle-phase is reached.
+
